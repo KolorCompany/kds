@@ -27,9 +27,12 @@ It is possible to build docs without installing anything. Just use our local net
 
 ## On Github Pages
 
+![Github pages settings]({{ site.baseurl }}/assets/github-pages.png)
+
 Here is an [example](https://kolorcompany.github.io/kds/) of a Jekyll generation powered by [GitHub Pages](https://pages.github.com/).
 
 1. [Download documentation system](https://github.com/KolorCompany/kds/archive/master.zip) files.
 2. Extract it to a folder, optionally delete `demo-files` folders.
 3. Configure your local and remote git repository.
-4. Follow instructions of [GitHub Pages](https://pages.github.com/).
+4. Each commit is generated on your configured GitHub Pages.
+5. Follow instructions of [GitHub Pages](https://pages.github.com/).
