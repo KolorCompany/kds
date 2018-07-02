@@ -1,0 +1,20 @@
+body {
+    ul,
+    ol {
+        li {
+            line-height: 1.5em;
+        }
+    }
+    .post-content {
+        ol {
+            li {
+                margin-bottom: 1em;
+            }
+        }
+        ul {
+            li {
+                margin-bottom: 0.2em;
+            }
+        }
+    }
+}

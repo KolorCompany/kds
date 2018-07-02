@@ -1,0 +1,50 @@
+<header class="sidebar" role="banner">
+
+    <div class="wrapper">
+
+{% assign page_paths = site.pages %}
+
+        <p class="site-title">
+            <a rel="author" href="{{ "/" | relative_url }}">
+                {{ site.title | escape }}
+            </a>
+        </p>
+
+        <form action="{{ "/search.html" | relative_url }}" method="get">
+            <label for="search-box"></label>
+            <input type="text" id="search-box" name="query">
+            <input type="submit" value="Search">
+        </form>
+
+        <nav>
+{% if site.posts.size > 0 and page_paths.size > 5 %}
+            <ul class="filter">
+                <li>
+                    <a href="#pages" class="link-filter active">{{ site.texts.pages }}</a>
+                </li>
+                <li>
+                    <a href="#posts" class="link-filter">{{ site.texts.posts }}</a>
+                </li>
+            </ul>
+{% endif %}
+{% if site.posts.size > 0 %}
+            <ul class="posts {% if page_paths.size <= 5 %}active{% endif %}" data-name="{{ site.texts.posts }}">
+    {% for post in site.posts %}
+                <li class="item">
+                    {% assign date_format = site.minima.date_format | default: "<span>%b</span> <span>%d</span> <span>%Y</span>" %}
+                    <a class="link-page" href="{{ post.url | relative_url }}">
+                        <span class="post-meta">{{ post.date | date: date_format }}</span>
+                        <span class="post-title">{{ post.title | escape }}</span>
+                    </a>
+                </li>
+    {% endfor %}
+            </ul>
+{% endif %}
+
+{% if page_paths %}
+    {% include menu-basic.html %}
+{% endif %}
+        </nav>
+
+    </div>
+</header>

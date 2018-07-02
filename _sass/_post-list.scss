@@ -1,0 +1,41 @@
+body {
+    main {
+        .post-list {
+            list-style: none;
+            padding: 0 0 0 30px;
+            margin: auto;
+            border-left: 3px solid qtr-color();
+            li {
+                span {
+                    &.post-meta {
+                        text-transform: uppercase;
+                        letter-spacing: 0.1em;
+                        font-size: qtr-font-size(-4);
+                        color: qtr-color();
+                        position: relative;
+                        &:after {
+                            display: block;
+                            content: '';
+                            position: absolute;
+                            top: 12px;
+                            left: -53px;
+                            width: 15px;
+                            height: 15px;
+                            border-radius: 100%;
+                            background-color: qtr-color();
+                            border: 15px solid qtr-color(6);
+                        }
+                    }
+                }
+                h3 {
+                    margin-top: 0;
+                    padding: 0;
+                    margin-bottom: 0.5em;
+                }
+                &+li {
+                    margin-top: 2em;
+                }
+            }
+        }
+    }
+}

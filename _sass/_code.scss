@@ -1,0 +1,14 @@
+body {
+    main {
+        code,
+        pre {
+            font-size: 0.85em;
+        }
+        p,
+        li {
+            &>code {
+                background-color: desaturate(qtr-color(5),100);
+            }
+        }
+    }
+}

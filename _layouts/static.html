@@ -1,0 +1,35 @@
+---
+layout: page
+---
+{% assign path = 'assets/' | append: page.specific_path %}
+{% assign images_filter = '.jpg,.jpeg,.png,.gif,.svg' %}
+<div class="static-files">
+    {{ content }}
+    <p><code>{{ path }}</code> and its subfolders contain:</p>
+    <ul class="static-files">
+{% for file in site.static_files %}
+    {% if file.path contains path %}
+        <li>
+            <span class="title">
+                <a href="{{ site.baseurl }}{{ file.path }}">
+                    {{ file.name }}
+                </a>
+                <sup>Last modfied {{ file.modified_time }}</sup>
+            </span>
+            <span class="preview">
+                <a href="{{ site.baseurl }}{{ file.path }}" style="border:none">
+        {% assign extname_downcase = file.extname | downcase %}
+        {% if images_filter contains extname_downcase %}
+                    <img src="{{ site.baseurl }}{{ file.path }}" alt="{{ file.basename }}">
+        {% endif %}
+                </a>
+            </span>
+            <span>
+                <a href="{{ site.baseurl }}{{ file.path }}" download>Download</a>
+            </span>
+        </li>
+
+    {% endif %}
+{% endfor %}
+    </ul>
+</div>

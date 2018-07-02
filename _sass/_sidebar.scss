@@ -1,0 +1,139 @@
+body {
+    &>header {
+        background-color: qtr-color();
+        color: qtr-color(6);
+        font-size: qtr-font-size(-2);
+        min-height: 100vh;
+        &.sidebar {
+            &>.wrapper {
+                padding: $sidebar-padding+px;
+                &>.site-title {
+                    margin-top: 0;
+                    margin-bottom: 2em;
+                    line-height: 3em;
+                    a {
+                        color: qtr-color(6);
+                        font-size: qtr-font-size(2);
+                        text-decoration: none;
+                        font-family: qtr-font-family(1);
+                    }
+                }
+                &>form {
+                    display: flex;
+                    position: relative;
+                    input {
+                        &[type="text"] {
+                            width: 100%;
+                            border-radius: 0px;
+                            border: none;
+                            padding: 15px;
+                            background-color: qtr-color(6);
+                            &:focus {
+                                &+[type="submit"] {
+                                    top: -15px;
+                                    color: qtr-color(6);
+                                }
+                            }
+                        }
+                        &[type="submit"] {
+                            border: none;
+                            background-color: transparent;
+                            font-size: qtr-font-size(-2);
+                            color: desaturate(qtr-color(3),100);
+                            padding: 0px 15px;
+                            position: absolute;
+                            top: 50%;
+                            transform: translateY(-50%);
+                            transition: all 400ms;
+                            pointer-events: none;
+                        }
+                    }
+                }
+                &>nav {
+                    padding-top: $sidebar-padding+px;
+                    ul {
+                        margin: 0;
+                    }
+                    li {
+                        ul {
+                            font-size: 0.8em;
+                        }
+                        &.item {
+                            a {
+                                .post-meta {
+                                    display: block;
+                                    font-size: qtr-font-size(-5);
+                                    margin: 0;
+                                    color: qtr-color(4);
+                                    line-height: 1;
+                                    text-transform: uppercase;
+                                    letter-spacing: 0.1em;
+                                }
+                            }
+                        }
+                    }
+                    &>ul {
+                        list-style: none;
+                        padding: 0;
+                        font-size: 1.3em;
+                        &.filter {
+                            display: flex;
+                            margin-bottom: 1em;
+                            text-align: center;
+                            &>li {
+                                width: inherit;
+                                flex-grow: 1;
+                            }
+                        }
+                        &.posts,
+                        &.collections,
+                        &.pages {
+                            display: none;
+                            padding: 1em 0em;
+                            // border-top: 1px solid qtr-color(4);
+                            // position: relative;
+                            &.active {
+                                display: inherit;
+                            }
+                            &:before {
+                                content: '';
+                                display: block;
+                                // position: absolute;
+                                // top: -1.5em;
+                                display: block;
+                                font-size: qtr-font-size(-3);
+                                color: qtr-color(2);
+                                line-height: 1;
+                                text-transform: uppercase;
+                                letter-spacing: 0.1em;
+                            }
+                        }
+                        &.pages {
+                            &:before {
+                                // content: 'pages';
+                            }
+                        }
+                        &.collections {
+                            &:before {
+                                content: attr(data-name);
+                            }
+                        }
+                        &.posts {
+                            &:before {
+                                // content: 'posts';
+                                // margin-bottom: 1em;
+                            }
+                            &>li {
+                                // margin-bottom: 10px;
+                            }
+                        }
+                        ul {
+                            list-style-type: circle;
+                            padding-left: 1em;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

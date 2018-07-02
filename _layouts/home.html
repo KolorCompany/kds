@@ -1,0 +1,33 @@
+---
+layout: default
+---
+
+<div class="home">
+    <h1>{{ site.title }}</h1>
+    <p>{{ site.description }}</p>
+
+    {{ content }}
+
+{% if site.posts.size > 0 %}
+    <h2 class="post-list-heading">{{ site.texts.posts }}</h2>
+    <ul class="post-list">
+    {% for post in site.posts %}
+        <li>
+            {% assign date_format = site.minima.date_format | default: "%b %d, %Y" %}
+            <span class="post-meta">{{ post.date | date: date_format }}</span>
+            <h3>
+                <a class="link-post" href="{{ post.url | relative_url }}">
+                    {{ post.title | escape }}
+                </a>
+            </h3>
+        {% if post.description %}
+            {{ post.description }}
+        {% else %}
+            {{ post.excerpt | strip_html }}
+        {% endif %}
+        </li>
+    {% endfor %}
+    </ul>
+{% endif %}
+
+</div>
