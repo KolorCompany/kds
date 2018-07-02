@@ -16,6 +16,7 @@ body {
                 font-size: qtr-font-size(-1);
                 &:hover {
                     color: desaturate(qtr-color(),100);
+                    border: none;
                 }
             }
             &.link-tag {
@@ -34,6 +35,9 @@ body {
             }
             &.link-post {
                 border: none;
+                &:hover {
+                    border: none;
+                }
             }
             &+svg {
                 &.feather {
