@@ -1,6 +1,7 @@
 ---
 layout: post
-title: Illustrations
+title: Personnalisation
+description: 'Personnalisation du thème'
 ---
 
-Our illustrations range from detailed hero images down to in-product spot images, with a consistent narrative of practicality, optimism and friendliness used throughout. This is accomplished through shape, color, softness and curves to achieve an inviting, engaging experience.
+Vous pouvez personnaliser le thème généré à partir des paramètres prévus à cet effet dans le fichier `_sass/_quikster.scss`.
